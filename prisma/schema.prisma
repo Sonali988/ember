@@ -1,0 +1,198 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Song {
+  id        String   @id @default(uuid())
+  title     String
+  artist    String?
+  ccli      String?
+  content   String   @db.LongText
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  verses        Verse[]
+  slides        Slide[]
+  serviceItems  ServiceItem[]
+  playlists     PlaylistSong[]
+
+  @@map("songs")
+}
+
+model Verse {
+  id      String @id @default(uuid())
+  songId  String
+  type    String @default("verse") // verse, chorus, bridge, etc.
+  number  Int?
+  content String @db.LongText
+
+  song Song @relation(fields: [songId], references: [id], onDelete: Cascade)
+
+  @@map("verses")
+}
+
+model Slide {
+  id                  String   @id @default(uuid())
+  songId              String?
+  title               String
+  content             String   @db.LongText
+  backgroundColor     String   @default("solid")
+  backgroundValue     String?
+  backgroundOpacity   Float    @default(1.0)
+  textStyle           String   @db.Text // Serialized TextStyle JSON
+  notes               String?  @db.LongText
+  order               Int      @default(0)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  song Song? @relation(fields: [songId], references: [id], onDelete: Cascade)
+
+  @@map("slides")
+}
+
+model Announcement {
+  id                String   @id @default(uuid())
+  title             String
+  content           String   @db.LongText
+  backgroundColor   String   @default("solid")
+  backgroundValue   String?
+  backgroundOpacity Float    @default(1.0)
+  textStyle         String   @db.Text
+  duration          Int      @default(10) // seconds
+  order             Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  serviceItems ServiceItem[]
+
+  @@map("announcements")
+}
+
+model Scripture {
+  id                String   @id @default(uuid())
+  book              String
+  chapter           Int
+  startVerse        Int
+  endVerse          Int
+  text              String   @db.LongText
+  translation       String   @default("NIV")
+  textStyle         String   @db.Text
+  backgroundColor   String   @default("solid")
+  backgroundValue   String?
+  backgroundOpacity Float    @default(1.0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  serviceItems ServiceItem[]
+
+  @@map("scriptures")
+}
+
+model ServiceItem {
+  id           String   @id @default(uuid())
+  serviceId    String
+  type         String   // "song", "announcement", "scripture", "media"
+  songId       String?
+  announcementId String?
+  scriptureId  String?
+  mediaId      String?
+  duration     Int?     // in seconds
+  notes        String?  @db.LongText
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  service       ServiceOrder @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  song          Song?        @relation(fields: [songId], references: [id], onDelete: SetNull)
+  announcement  Announcement? @relation(fields: [announcementId], references: [id], onDelete: SetNull)
+  scripture     Scripture?   @relation(fields: [scriptureId], references: [id], onDelete: SetNull)
+  media         MediaFile?   @relation(fields: [mediaId], references: [id], onDelete: SetNull)
+
+  @@map("service_items")
+}
+
+model ServiceOrder {
+  id        String           @id @default(uuid())
+  name      String
+  date      DateTime
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+  items     ServiceItem[]
+  notes     Note[]
+  verses    VerseDetection[]
+
+  @@map("service_orders")
+}
+
+model Note {
+  id             String       @id @default(uuid())
+  content        String       @db.LongText
+  timestamp      DateTime     @default(now())
+  serviceOrderId String
+  serviceOrder   ServiceOrder @relation(fields: [serviceOrderId], references: [id], onDelete: Cascade)
+
+  @@index([serviceOrderId, timestamp])
+  @@map("notes")
+}
+
+model VerseDetection {
+  id                 String       @id @default(uuid())
+  reference          String
+  book               String
+  chapter            Int
+  startVerse         Int
+  endVerse           Int
+  textEN             String       @db.LongText
+  textHI             String       @db.LongText
+  rawSpeech          String       @db.LongText
+  detectedFromSpeech Boolean      @default(true)
+  confidence         Float        @default(0)
+  serviceOrderId     String
+  serviceOrder       ServiceOrder @relation(fields: [serviceOrderId], references: [id], onDelete: Cascade)
+  createdAt          DateTime     @default(now())
+
+  @@index([serviceOrderId, createdAt])
+  @@map("verse_detections")
+}
+
+model Playlist {
+  id        String         @id @default(uuid())
+  name      String
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  songs     PlaylistSong[]
+
+  @@map("playlists")
+}
+
+model PlaylistSong {
+  playlistId String
+  songId     String
+  order      Int
+
+  playlist Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
+  song     Song     @relation(fields: [songId], references: [id], onDelete: Cascade)
+
+  @@id([playlistId, songId])
+  @@map("playlist_songs")
+}
+
+model MediaFile {
+  id        String        @id @default(uuid())
+  name      String
+  path      String
+  type      String        // "image", "video", "audio"
+  duration  Int?          // in seconds
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  serviceItems ServiceItem[]
+
+  @@map("media_files")
+}
