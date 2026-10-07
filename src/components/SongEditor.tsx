@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Form, Input, Button, message } from 'antd'
-import { Song, Verse } from '@types/index'
+import { Song, Verse } from '../types/index'
 import { v4 as uuidv4 } from 'uuid'
 import { apiService } from '@services/api'
 import { colorForGroup } from '@utils/groups'

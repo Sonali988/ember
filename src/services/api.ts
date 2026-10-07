@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
-import { Song, ServiceOrder, Announcement, Scripture, MediaFile, ApiResponse, SermonNote, DetectedVerse } from '@types/index'
+import { Song, ServiceOrder, Announcement, Scripture, MediaFile, ApiResponse, SermonNote, DetectedVerse } from '../types/index'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api'
 

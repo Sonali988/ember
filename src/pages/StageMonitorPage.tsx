@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { StageMonitor } from '@components/StageMonitor'
 import { usePresentationStore } from '@store/presentationStore'
-import { ScreenMessage, Slide } from '@types/index'
+import { ScreenMessage, Slide } from '../types/index'
 
 export const StageMonitorPage: React.FC = () => {
   const {

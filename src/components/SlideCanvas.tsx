@@ -1,5 +1,5 @@
 import React from 'react'
-import { Slide } from '@types/index'
+import { Slide } from '../types/index'
 
 interface SlideCanvasProps {
   slide: Slide | null

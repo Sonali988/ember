@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Button } from 'antd'
 import { usePresentationStore } from '@store/presentationStore'
 import { apiService } from '@services/api'
-import { DetectedVerse } from '@types/index'
+import { DetectedVerse } from '../types/index'
 
 interface SpeechResultEvent {
   resultIndex: number

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Slide, BackgroundMedia, DetectedVerse, VerseLanguage } from '@types/index'
+import { Slide, BackgroundMedia, DetectedVerse, VerseLanguage } from '../types/index'
 import './DisplayEngine.css'
 
 interface DisplayEngineProps {

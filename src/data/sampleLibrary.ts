@@ -1,4 +1,4 @@
-import { Song, Slide, TextStyle } from '@types/index'
+import { Song, Slide, TextStyle } from '../types/index'
 import { colorForGroup } from '@utils/groups'
 
 const textStyle: TextStyle = {

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Song, Slide } from '@types/index'
+import { Song, Slide } from '../types/index'
 import { colorForGroup } from '@utils/groups'
 import { SlideCanvas } from './SlideCanvas'
 

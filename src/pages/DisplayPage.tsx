@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { DisplayEngine } from '@components/DisplayEngine'
 import { usePresentationStore } from '@store/presentationStore'
-import { ScreenMessage } from '@types/index'
+import { ScreenMessage } from '../types/index'
 
 export const DisplayPage: React.FC = () => {
   const { displayState, liveVerse, verseLanguage, setLiveVerse, setVerseLanguage } = usePresentationStore()

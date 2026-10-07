@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Slide, Song, DisplayState, ServiceOrder, Announcement, Scripture, DetectedVerse, VerseLanguage } from '@types/index'
+import { Slide, Song, DisplayState, ServiceOrder, Announcement, Scripture, DetectedVerse, VerseLanguage } from '../types/index'
 
 interface PresentationStore {
   // Current display state

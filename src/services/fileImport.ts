@@ -1,6 +1,6 @@
 import JSZip from 'jszip'
 import { parseStringPromise } from 'xml2js'
-import { Song, Slide, TextStyle } from '@types/index'
+import { Song, Slide, TextStyle } from '../types/index'
 import { v4 as uuidv4 } from 'uuid'
 import { colorForGroup, inferGroup } from '@utils/groups'
 

@@ -6,11 +6,12 @@ directories:
 files:
   - dist/**/*
   - dist-electron/main.js
-  - node_modules/**/*
+  - dist-electron/preload.js
+  - package.json
 win:
+  signAndEditExecutable: false
   target:
-    - nsis
-    - portable
+    - dir
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true

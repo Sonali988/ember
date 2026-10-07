@@ -1,11 +1,11 @@
-import { app, BrowserWindow, ipcMain, Menu, globalShortcut, screen } from 'electron'
+import { app, BrowserWindow, ipcMain, globalShortcut, screen } from 'electron'
 import path from 'path'
 
 let mainWindow: BrowserWindow | null = null
 let displayWindow: BrowserWindow | null = null
 let stageMonitorWindow: BrowserWindow | null = null
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = !app.isPackaged
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
@@ -162,13 +162,13 @@ ipcMain.handle('close-stage-monitor', () => {
   }
 })
 
-ipcMain.handle('send-to-display', (event, data) => {
+ipcMain.handle('send-to-display', (_event, data) => {
   if (displayWindow && !displayWindow.isDestroyed()) {
     displayWindow.webContents.send('display-update', data)
   }
 })
 
-ipcMain.handle('send-to-stage-monitor', (event, data) => {
+ipcMain.handle('send-to-stage-monitor', (_event, data) => {
   if (stageMonitorWindow && !stageMonitorWindow.isDestroyed()) {
     stageMonitorWindow.webContents.send('stage-update', data)
   }

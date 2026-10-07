@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { DetectedVerse, Slide, VerseLanguage } from '@types/index'
+import { DetectedVerse, Slide, VerseLanguage } from '../types/index'
 import './StageMonitor.css'
 
 interface StageMonitorProps {
