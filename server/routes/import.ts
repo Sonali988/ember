@@ -5,7 +5,7 @@ import { FileImportService } from '../../src/services/fileImport'
 export const importRoutes = (prisma: PrismaClient) => {
   const router = Router()
 
-  router.post('/propresenter', async (req: Request, res: Response) => {
+  router.post('/ember', async (req: Request, res: Response) => {
     try {
       // File would be extracted from multipart form data
       const songs = req.body.songs || []

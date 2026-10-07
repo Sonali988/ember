@@ -1,7 +1,7 @@
 {
-  "name": "propresenter-clone",
+  "name": "ember",
   "version": "1.0.0",
-  "description": "ProPresenter clone - lyrics, slides, and presentation management",
+  "description": "Ember - lyrics, slides, and presentation management",
   "main": "dist-electron/main.cjs",
   "homepage": "./",
   "type": "module",

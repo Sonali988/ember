@@ -170,8 +170,8 @@ export const OperatorPanel: React.FC = () => {
     >
       <header className="pp-toolbar">
         <div className="pp-brand">
-          <span className="pp-logo">PP</span>
-          <span>Presenter</span>
+          <span className="pp-logo">E</span>
+          <span>Ember</span>
         </div>
 
         <div className="pp-toolbar-actions">

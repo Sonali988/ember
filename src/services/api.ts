@@ -115,10 +115,10 @@ class ApiService {
   }
 
   // Import endpoints
-  async importProPresenterFile(file: File): Promise<{ songs: Song[] }> {
+  async importEmberFile(file: File): Promise<{ songs: Song[] }> {
     const formData = new FormData()
     formData.append('file', file)
-    const response = await this.client.post<ApiResponse<{ songs: Song[] }>>('/import/propresenter', formData, {
+    const response = await this.client.post<ApiResponse<{ songs: Song[] }>>('/import/ember', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     })
     return response.data.data!

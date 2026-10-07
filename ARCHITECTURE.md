@@ -1,4 +1,4 @@
-# ProPresenter Clone - Architecture
+# Ember - Architecture
 
 ## Overview
 
@@ -124,7 +124,7 @@ Benefits:
 - File import/export operations
 
 #### File Import Service
-- ProPresenter (.pro) XML parsing
+- Ember (.pro) XML parsing
 - PowerPoint (.pptx) extraction and parsing
 - JSON import support
 - Slide generation from lyrics

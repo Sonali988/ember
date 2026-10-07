@@ -1,17 +1,17 @@
-# ProPresenter Clone - Quick Reference
+# Ember - Quick Reference
 
 ## Installation (5 minutes)
 
 ```bash
 # 1. Navigate to project
-cd c:\Users\Sonali\coding\pp-clone
+cd c:\Users\Sonali\coding\ember
 
 # 2. Install dependencies
 npm install
 
 # 3. Create database
 mysql -u root -p
-> CREATE DATABASE propresenter;
+> CREATE DATABASE Ember;
 > EXIT
 
 # 4. Setup database
@@ -123,7 +123,7 @@ prisma/
 
 1. Click "Import Song" button
 2. Select file:
-   - `.pro` (ProPresenter)
+   - `.pro` (Ember)
    - `.pptx` (PowerPoint)
    - `.json` (JSON format)
 3. Songs appear in sidebar
@@ -183,7 +183,7 @@ npm install
 # Build
 npm run build
 
-# Creates: dist-electron/ProPresenter Clone-1.0.0.exe
+# Creates: dist-electron/Ember-1.0.0.exe
 ```
 
 ## Environment Variables
@@ -199,7 +199,7 @@ PORT=3001
 NODE_ENV=development
 
 # Database
-DATABASE_URL=mysql://root:PASSWORD@localhost:3306/propresenter
+DATABASE_URL=mysql://root:PASSWORD@localhost:3306/Ember
 ```
 
 ## Key Components
@@ -247,7 +247,7 @@ POST /api/service-orders     # Create service order
 GET  /api/media              # List media files
 POST /api/media/upload       # Upload media
 
-POST /api/import/propresenter # Import .pro file
+POST /api/import/Ember # Import .pro file
 POST /api/import/powerpoint   # Import .pptx file
 ```
 
@@ -257,7 +257,7 @@ POST /api/import/powerpoint   # Import .pptx file
 # Initial setup
 git init
 git add .
-git commit -m "Initial ProPresenter clone"
+git commit -m "Initial Ember"
 
 # Make changes
 git add src/components/SomeFile.tsx

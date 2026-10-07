@@ -344,7 +344,7 @@ async function importProXml(xml: string, filename: string): Promise<Song[]> {
     data.RVSongDocument?.[0] ||
     data.RVSongDocument
   if (!doc) {
-    throw new Error('Not a ProPresenter XML document')
+    throw new Error('Not an Ember XML document')
   }
 
   const attrs = doc.$ || {}
@@ -371,7 +371,7 @@ async function importProXml(xml: string, filename: string): Promise<Song[]> {
   })
 
   if (!slides.length) {
-    throw new Error('No slides found in this ProPresenter file')
+    throw new Error('No slides found in this Ember file')
   }
 
   return [makeSong(title, slides, { artist, ccli })]
@@ -494,7 +494,7 @@ async function importProBundle(file: ArrayBuffer, filename: string): Promise<Son
     const copy = new ArrayBuffer(bytes.byteLength)
     new Uint8Array(copy).set(bytes)
     const nested = new File([copy], entry.name.split('/').pop() || entry.name)
-    songs.push(...(await FileImportService.importProPresenterFile(nested)))
+    songs.push(...(await FileImportService.importEmberFile(nested)))
   }
 
   if (!songs.length) {
@@ -504,7 +504,7 @@ async function importProBundle(file: ArrayBuffer, filename: string): Promise<Son
 }
 
 export class FileImportService {
-  static async importProPresenterFile(file: File): Promise<Song[]> {
+  static async importEmberFile(file: File): Promise<Song[]> {
     const buffer = await file.arrayBuffer()
     const bytes = new Uint8Array(buffer)
 
@@ -596,7 +596,7 @@ export class FileImportService {
       case 'pro5':
       case 'pro5x':
       case 'probundle':
-        return this.importProPresenterFile(file)
+        return this.importEmberFile(file)
       case 'pptx':
         return this.importPowerPointFile(file)
       case 'json':

@@ -1,5 +1,5 @@
-appId: com.propresenter.clone
-productName: ProPresenter Clone
+appId: com.ember.app
+productName: Ember
 directories:
   buildResources: assets
   output: dist-electron

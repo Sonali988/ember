@@ -1,4 +1,4 @@
-# ProPresenter Clone - Quick Setup Guide
+# Ember - Quick Setup Guide
 
 ## 1. Prerequisites
 
@@ -13,7 +13,7 @@ Install these first:
 
 ```bash
 # If you have git
-cd c:\Users\Sonali\coding\pp-clone
+cd c:\Users\Sonali\coding\ember
 
 # All files are already created
 ```
@@ -33,7 +33,7 @@ This will install ~500 packages. Takes 2-5 minutes.
 Open MySQL command line or use MySQL Workbench:
 
 ```sql
-CREATE DATABASE propresenter;
+CREATE DATABASE Ember;
 ```
 
 ### Configure Environment
@@ -41,7 +41,7 @@ CREATE DATABASE propresenter;
 Edit `.env.local`:
 
 ```env
-DATABASE_URL=mysql://root:PASSWORD@localhost:3306/propresenter
+DATABASE_URL=mysql://root:PASSWORD@localhost:3306/Ember
 VITE_API_URL=http://localhost:3001/api
 PORT=3001
 NODE_ENV=development
@@ -127,7 +127,7 @@ This opens 3 windows:
 
 ## 6. Import Real Content
 
-### ProPresenter Files (.pro)
+### Ember Files (.pro)
 
 1. Click **"Import Song"**
 2. Select a `.pro` file
@@ -206,13 +206,13 @@ npx prisma migrate reset
 ### Create Backup
 
 ```bash
-# mysqldump -u root -p propresenter > backup.sql
+# mysqldump -u root -p Ember > backup.sql
 ```
 
 ### Restore Backup
 
 ```bash
-# mysql -u root -p propresenter < backup.sql
+# mysql -u root -p Ember < backup.sql
 ```
 
 ## 10. Troubleshooting
@@ -258,7 +258,7 @@ npm install electron --save-dev
 ### Import File Not Working
 
 - Ensure file format is .pro, .pptx, or .json
-- For .pro/.pptx files, they must be valid ProPresenter/PowerPoint files
+- For .pro/.pptx files, they must be valid Ember/PowerPoint files
 - Check console for specific errors
 
 ## 11. Production Build
@@ -308,6 +308,6 @@ Creates optimized build in `dist/` folder.
 
 ---
 
-**Enjoy your ProPresenter Clone!** 🎉
+**Enjoy your Ember!** 🎉
 
 Questions? Issues? Check the GitHub discussions or create an issue.

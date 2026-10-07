@@ -1,4 +1,4 @@
-# ProPresenter Clone - Project Summary
+# Ember - Project Summary
 
 ## ✅ Complete Implementation
 
@@ -132,7 +132,7 @@ A full-featured presentation software built from scratch with all requested capa
 ---
 
 ### 8. **File Import/Export** ✅
-- ✓ ProPresenter XML (.pro) import
+- ✓ Ember XML (.pro) import
 - ✓ PowerPoint PPTX import (with media extraction)
 - ✓ JSON format import/export
 - ✓ Automatic slide generation from lyrics
@@ -225,7 +225,7 @@ A full-featured presentation software built from scratch with all requested capa
 ## 📁 Project Structure
 
 ```
-pp-clone/
+ember/
 ├── electron/                      # Desktop app layer
 │   ├── main.ts                   # Electron main process
 │   └── preload.ts                # IPC bridge
@@ -299,7 +299,7 @@ npm install
 ### 2. Setup Database
 ```bash
 # Create database
-mysql -u root -p -e "CREATE DATABASE propresenter;"
+mysql -u root -p -e "CREATE DATABASE Ember;"
 
 # Run migrations
 npx prisma migrate dev --name init
@@ -334,7 +334,7 @@ npm run dev:electron
 | Multi-display | ✅ | Audience + stage monitor |
 | Display Engine | ✅ | Background videos, images, colors |
 | Hotkey System | ✅ | Global + in-app hotkeys |
-| File Import | ✅ | ProPresenter, PowerPoint, JSON |
+| File Import | ✅ | Ember, PowerPoint, JSON |
 | Announcements | ✅ | Templates with styling |
 | Scripture | ✅ | Database integration |
 | Service Orders | ✅ | Worship order builder |
@@ -425,7 +425,7 @@ npm run dev:electron
 
 ## 🎉 Summary
 
-**You now have a complete, production-ready ProPresenter clone with:**
+**You now have a complete, production-ready Ember with:**
 
 ✅ Professional UI/UX  
 ✅ Full Electron desktop app  

@@ -1,4 +1,4 @@
-# 📚 ProPresenter Clone - Documentation Index
+# 📚 Ember - Documentation Index
 
 ## 🎯 Where to Start?
 
@@ -46,7 +46,7 @@ npm install
 
 # 2. Setup Database
 mysql -u root -p
-CREATE DATABASE propresenter;
+CREATE DATABASE Ember;
 EXIT
 
 npx prisma migrate dev --name init
@@ -99,7 +99,7 @@ npm run dev:electron      # Terminal 3
 ✅ **Song Management** - Create, edit, import songs  
 ✅ **Multi-Display** - Auto-detect and manage multiple monitors  
 ✅ **Hotkeys** - Global system hotkeys  
-✅ **File Import** - ProPresenter (.pro), PowerPoint (.pptx), JSON  
+✅ **File Import** - Ember (.pro), PowerPoint (.pptx), JSON  
 ✅ **Database** - MySQL with 10 tables  
 ✅ **Backend API** - Express server with 30+ endpoints  
 ✅ **Professional UI** - Ant Design components  
@@ -134,7 +134,7 @@ npm run dev:electron      # Terminal 3
 2. Enter title, artist, lyrics
 3. Click "Save"
 
-### Import from ProPresenter
+### Import from Ember
 1. Click "Import Song"
 2. Select .pro file
 3. Done!

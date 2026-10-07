@@ -1,8 +1,8 @@
 ================================================================================
-  PROPRESENTER CLONE - GETTING STARTED
+  Ember - GETTING STARTED
 ================================================================================
 
-Welcome! Your complete ProPresenter clone is ready. Here's what to do:
+Welcome! Your complete Ember is ready. Here's what to do:
 
 ================================================================================
 STEP 1: READ THE DOCS (5 minutes)
@@ -34,7 +34,7 @@ STEP 3: SETUP DATABASE (3 minutes)
 Open MySQL command line:
 
   mysql -u root -p
-  CREATE DATABASE propresenter;
+  CREATE DATABASE Ember;
   EXIT
 
 Then run:
@@ -109,7 +109,7 @@ F12                Developer console
 QUICK HELP
 ================================================================================
 
-Q: How do I import ProPresenter files?
+Q: How do I import Ember files?
 A: Click "Import Song" → Select .pro file → Done!
 
 Q: How do I see the display on my second monitor?
@@ -120,7 +120,7 @@ A: Press Ctrl+S to see speaker notes, next slide, and timer while presenting.
 
 Q: Database password not working?
 A: Update .env.local with correct password. Format:
-   DATABASE_URL=mysql://root:YOUR_PASSWORD@localhost:3306/propresenter
+   DATABASE_URL=mysql://root:YOUR_PASSWORD@localhost:3306/Ember
 
 Q: Songs aren't loading?
 A: Check backend is running (Terminal 2). Look for "✓ Server running"
@@ -204,7 +204,7 @@ PROJECT STATS
 ✓ Full Electron desktop app
 ✓ Express backend with MySQL
 ✓ Hotkey system working
-✓ File import (ProPresenter, PowerPoint, JSON)
+✓ File import (Ember, PowerPoint, JSON)
 ✓ Production ready
 
 ================================================================================
@@ -216,6 +216,6 @@ and SETUP.md for the fastest path to getting it running.
 
 Questions? Check the documentation files. They have everything you need!
 
-Welcome to ProPresenter Clone!
+Welcome to Ember!
 
 ================================================================================

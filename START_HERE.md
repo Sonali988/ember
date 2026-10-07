@@ -1,4 +1,4 @@
-# 🎬 ProPresenter Clone - START HERE
+# 🎬 Ember - START HERE
 
 ## Welcome!
 
@@ -16,7 +16,7 @@ npm install
 ### 2. Setup Database
 ```bash
 mysql -u root -p
-CREATE DATABASE propresenter;
+CREATE DATABASE Ember;
 EXIT
 
 npx prisma migrate dev --name init
@@ -85,7 +85,7 @@ Read in this order:
 ✅ **Stage Monitor** - Speaker notes + timer + next slide  
 ✅ **Song Management** - Create, edit, organize songs  
 ✅ **Hotkey System** - Global hotkeys for control  
-✅ **Import** - ProPresenter, PowerPoint, JSON support  
+✅ **Import** - Ember, PowerPoint, JSON support  
 ✅ **Multi-Display** - Automatic monitor detection  
 ✅ **Backend API** - Express server with MySQL  
 ✅ **Database** - 10 tables with Prisma ORM  
@@ -126,7 +126,7 @@ taskkill /PID <PID> /F
 
 ### Import a Song
 1. Click "Import Song"
-2. Select ProPresenter (.pro), PowerPoint (.pptx), or JSON
+2. Select Ember (.pro), PowerPoint (.pptx), or JSON
 3. Songs appear instantly in sidebar
 
 ### Create from Scratch
@@ -151,7 +151,7 @@ taskkill /PID <PID> /F
 ## 📁 Project Structure
 
 ```
-pp-clone/
+ember/
 ├── src/                  Frontend React app
 ├── server/               Node.js backend
 ├── electron/             Desktop app layer
@@ -265,7 +265,7 @@ Copy to `.env.local`:
 
 ```env
 VITE_API_URL=http://localhost:3001/api
-DATABASE_URL=mysql://root:YOUR_PASSWORD@localhost:3306/propresenter
+DATABASE_URL=mysql://root:YOUR_PASSWORD@localhost:3306/Ember
 PORT=3001
 NODE_ENV=development
 ```

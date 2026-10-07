@@ -1,9 +1,9 @@
-# ProPresenter Clone - Complete File Structure
+# Ember - Complete File Structure
 
 ## Project Root Files
 
 ```
-pp-clone/
+ember/
 ├── .env.example              # Environment variables template
 ├── .env.local                # Local environment (not in git)
 ├── .gitignore               # Git ignore rules
@@ -118,7 +118,7 @@ server/
     │   └── DELETE /:id
     │
     └── import.ts            # File import handlers
-        ├── POST /propresenter
+        ├── POST /Ember
         └── POST /powerpoint
 ```
 
@@ -334,7 +334,7 @@ dist-electron/              # Electron build
 ├── preload.js              # Bundled preload
 └── resources/              # App assets
 
-ProPresenter Clone-1.0.0.exe  # Windows installer
+Ember-1.0.0.exe  # Windows installer
 ```
 
 ## Version Control Structure

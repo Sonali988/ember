@@ -1,4 +1,4 @@
-# ProPresenter Clone
+# Ember
 
 A modern, feature-rich presentation software for churches and worship leaders. Built with React, Electron, Node.js, and MySQL.
 
@@ -33,7 +33,7 @@ A modern, feature-rich presentation software for churches and worship leaders. B
   - **Ctrl+M**: Focus main operator window
 
 ### Import/Export
-- Import from ProPresenter (.pro)
+- Import from Ember (.pro)
 - Import from PowerPoint (.pptx)
 - Native JSON format support
 - Export service orders
@@ -64,7 +64,7 @@ A modern, feature-rich presentation software for churches and worship leaders. B
 ### 1. Clone and Install Dependencies
 
 ```bash
-cd pp-clone
+cd ember
 npm install
 ```
 
@@ -73,13 +73,13 @@ npm install
 Create a MySQL database:
 
 ```sql
-CREATE DATABASE propresenter;
+CREATE DATABASE Ember;
 ```
 
 Update `.env.local`:
 
 ```env
-DATABASE_URL=mysql://root:password@localhost:3306/propresenter
+DATABASE_URL=mysql://root:password@localhost:3306/Ember
 VITE_API_URL=http://localhost:3001/api
 ```
 
@@ -131,7 +131,7 @@ npx prisma migrate dev --name <migration-name>
 ## Project Structure
 
 ```
-pp-clone/
+ember/
 ├── electron/              # Electron main process
 │   ├── main.ts           # Main Electron app
 │   └── preload.ts        # IPC bridge
@@ -213,7 +213,7 @@ Windows, macOS, and Linux builds supported via electron-builder. Configure in `e
 
 ## Supported File Formats
 
-- **ProPresenter**: .pro (XML)
+- **Ember**: .pro (XML)
 - **PowerPoint**: .pptx (with embedded media extraction)
 - **JSON**: Custom format
 - **Media**: MP4, PNG, JPG, GIF, WebP, MOV
@@ -227,7 +227,7 @@ VITE_API_URL=http://localhost:3001/api
 # Backend
 PORT=3001
 NODE_ENV=development
-DATABASE_URL=mysql://user:pass@localhost:3306/propresenter
+DATABASE_URL=mysql://user:pass@localhost:3306/Ember
 ```
 
 ## Troubleshooting
@@ -236,7 +236,7 @@ DATABASE_URL=mysql://user:pass@localhost:3306/propresenter
 
 - Ensure MySQL is running
 - Check `DATABASE_URL` in `.env.local`
-- Verify database exists: `CREATE DATABASE propresenter;`
+- Verify database exists: `CREATE DATABASE Ember;`
 
 ### Blank Display Window
 
@@ -273,7 +273,7 @@ DATABASE_URL=mysql://user:pass@localhost:3306/propresenter
 
 - Single operator interface (multi-operator not yet supported)
 - Limited to 2-3 display outputs
-- Some ProPresenter features not supported (advanced animations, etc.)
+- Some Ember features not supported (advanced animations, etc.)
 
 ## Support & Contributing
 
@@ -285,4 +285,4 @@ MIT
 
 ## Credits
 
-Built as a modern alternative to ProPresenter for churches and worship leaders.
+Built as a modern alternative to Ember for churches and worship leaders.
